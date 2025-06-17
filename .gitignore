@@ -31,4 +31,8 @@ yarn-error.log*
 cache
 artifacts
 typechain
-typechain-types 
+typechain-types
+
+# Large files
+charity.zip
+*.zip 
