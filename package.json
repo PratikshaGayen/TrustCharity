@@ -43,27 +43,10 @@
     ]
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
-    "@nomicfoundation/hardhat-ethers": "^3.0.0",
-    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.0",
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@nomicfoundation/hardhat-verify": "^2.0.0",
     "@tailwindcss/forms": "^0.5.7",
-    "@typechain/ethers-v6": "^0.5.0",
-    "@typechain/hardhat": "^9.0.0",
-    "@types/chai": "^4.2.0",
-    "@types/mocha": "^10.0.10",
     "autoprefixer": "^10.4.14",
-    "chai": "^4.2.0",
     "dotenv": "^16.5.0",
-    "hardhat": "^2.24.3",
-    "hardhat-gas-reporter": "^1.0.8",
     "postcss": "^8.4.31",
-    "solidity-coverage": "^0.8.1",
-    "tailwindcss": "^3.3.0",
-    "ts-node": "^10.9.2",
-    "typechain": "^8.3.0",
-    "typescript": "^5.8.3"
+    "tailwindcss": "^3.3.0"
   }
 }

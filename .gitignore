@@ -35,4 +35,8 @@ typechain-types
 
 # Large files
 charity.zip
-*.zip 
+*.zip
+
+# Development files
+package.dev.json
+deployment-info.json 

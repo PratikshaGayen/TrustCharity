@@ -1,8 +1,8 @@
-const { ethers } = require("hardhat");
+const hre = require("hardhat");
 
 async function main() {
   // Get the contract factory
-  const Charity = await ethers.getContractFactory("Charity");
+  const Charity = await hre.ethers.getContractFactory("Charity");
   
   // Deploy the contract
   console.log("Deploying Charity contract...");
