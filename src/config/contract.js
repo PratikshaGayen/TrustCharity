@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0xd34dD0694083c7Cf53CEccB8D6E9403db4db0712";
+export const CONTRACT_ADDRESS = "0x728D3d3265fb46FF93f4E5dAB8cc3dcc467B2465";
 
 export const CONTRACT_ABI = [
   {
@@ -104,6 +104,11 @@ export const CONTRACT_ABI = [
       {
         "internalType": "string",
         "name": "_description",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_imageUrl",
         "type": "string"
       },
       {
@@ -239,6 +244,11 @@ export const CONTRACT_ABI = [
         "type": "string"
       },
       {
+        "internalType": "string",
+        "name": "imageUrl",
+        "type": "string"
+      },
+      {
         "internalType": "address",
         "name": "beneficiary",
         "type": "address"
@@ -262,6 +272,11 @@ export const CONTRACT_ABI = [
         "internalType": "uint256",
         "name": "deadline",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "creator",
+        "type": "address"
       }
     ],
     "stateMutability": "view",

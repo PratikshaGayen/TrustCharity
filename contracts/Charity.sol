@@ -119,16 +119,32 @@ contract Charity {
 
         emit DonationMade(_campaignId, msg.sender, msg.value);
 
+        // Check if goal is reached and automatically transfer funds
         if (campaign.raised >= campaign.goal) {
             campaign.active = false;
             emit CampaignCompleted(_campaignId, campaign.raised);
+            
+            // Automatically transfer funds to beneficiary
+            uint256 amount = campaign.raised;
+            campaign.raised = 0;
+            
+            (bool success, ) = campaign.beneficiary.call{value: amount}("");
+            require(success, "Automatic transfer failed");
+            
+            emit FundsWithdrawn(_campaignId, amount);
         }
     }
 
-    function withdrawFunds(uint256 _campaignId) public campaignExists(_campaignId) onlyCreator(_campaignId) {
+    function withdrawFunds(uint256 _campaignId) public campaignExists(_campaignId) {
         Campaign storage campaign = campaigns[_campaignId];
         require(campaign.raised > 0, "No funds to withdraw");
         require(!campaign.active || block.timestamp > campaign.deadline, "Campaign is still active");
+        
+        // Allow both creator and beneficiary to withdraw
+        require(
+            msg.sender == campaign.creator || msg.sender == campaign.beneficiary,
+            "Only creator or beneficiary can withdraw"
+        );
 
         uint256 amount = campaign.raised;
         campaign.raised = 0;

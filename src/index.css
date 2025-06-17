@@ -1,3 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+/* Test class to verify Tailwind is working */
+.test-tailwind {
+  @apply bg-red-500 p-4 text-white rounded-lg;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-dark text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-card backdrop-blur-md border border-white/10 rounded-xl shadow-lg 
+           transition-all duration-300 hover:shadow-xl hover:shadow-accent-blue/10;
+  }
+
+  .stat-card {
+    @apply p-4 rounded-lg bg-dark-lighter/50 backdrop-blur-sm border border-white/5
+           transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-blue/5;
+  }
+
+  .neumorphic {
+    @apply bg-dark-lighter rounded-xl shadow-[8px_8px_16px_rgba(0,0,0,0.2),-8px_-8px_16px_rgba(255,255,255,0.05)]
+           transition-all duration-300 hover:shadow-[12px_12px_24px_rgba(0,0,0,0.3),-12px_-12px_24px_rgba(255,255,255,0.07)];
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink
+           animate-gradient-x;
+  }
+
+  .gradient-border {
+    @apply relative rounded-xl p-[1px] bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink
+           animate-gradient-x;
+  }
+
+  .gradient-border::before {
+    @apply content-[''] absolute inset-0 rounded-xl bg-dark-lighter -z-10;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink 
+           text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-accent-blue/20 
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+           animate-gradient-x;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg bg-dark-lighter text-white font-medium 
+           border border-white/10 transition-all duration-300 
+           hover:bg-white/5 hover:border-accent-blue/50 active:scale-95 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg bg-dark-lighter border border-white/10 
+           text-white placeholder-white/50 focus:outline-none focus:ring-2 
+           focus:ring-accent-blue/50 transition-all duration-300
+           hover:border-accent-blue/30;
+  }
+
+  .floating-icon {
+    @apply animate-float;
+  }
+
+  .connect-wallet-btn {
+    @apply btn-primary animate-glow;
+  }
+
+  .nav-link {
+    @apply text-white/70 hover:text-white transition-colors duration-300
+           relative after:absolute after:bottom-0 after:left-0 after:h-0.5 
+           after:w-0 after:bg-accent-blue after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold gradient-text mb-8
+           animate-fade-in;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl 
+           hover:shadow-accent-blue/10 active:scale-[0.98]
+           hover:border-accent-blue/30;
+  }
+
+  .loading-spinner {
+    @apply w-8 h-8 border-4 border-accent-blue/30 border-t-accent-blue 
+           rounded-full animate-spin;
+  }
+
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm animate-fade-in;
+  }
+
+  .modal-content {
+    @apply glass-card p-6 max-w-lg w-full mx-4 animate-slide-up;
+  }
+
+  .tab-button {
+    @apply px-4 py-2 text-white/70 hover:text-white transition-colors duration-300 
+           border-b-2 border-transparent hover:border-accent-blue
+           relative after:absolute after:bottom-0 after:left-0 after:h-0.5 
+           after:w-0 after:bg-accent-blue after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  .tab-button.active {
+    @apply text-white border-accent-blue;
+  }
+
+  .dropdown-menu {
+    @apply absolute right-0 mt-2 w-48 rounded-lg bg-dark-lighter border border-white/10 
+           shadow-lg py-1 z-50 animate-slide-down;
+  }
+
+  .dropdown-item {
+    @apply block px-4 py-2 text-white/70 hover:text-white hover:bg-white/5 
+           transition-colors duration-300;
+  }
+
+  .hero-gradient {
+    @apply absolute inset-0 bg-gradient-to-b from-accent-blue/20 via-accent-purple/20 to-accent-pink/20
+           blur-3xl opacity-50 animate-pulse-slow;
+  }
+} 
